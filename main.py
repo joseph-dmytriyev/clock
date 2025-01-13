@@ -44,10 +44,8 @@ def horloge():
 print("     *** Menu ***     ")
 print("1.Alarme ")
 print("2.Régler Heure")
-print("3.AMPM")
-print("4.Heure classique ")
-print("5.Horloge ")
-print("6.Time Stop ")
+print("3.Horloge ")
+print("4.Time Stop ")
 answer0 = input(" : ").strip().lower()
 
 if answer0 == "1":
@@ -73,30 +71,6 @@ elif answer0 == "2" :
         horloge()
     except ValueError:
         print("Format d'heure invalide. Veuillez entrer l'heure au format HH:MM:SS.")
-
-
-
-
-elif answer0 == "3" : 
-    heure1 = "%I %H:%M:%S %p"
-    try:
-        print("Modification...")
-        horloge()
-    except ValueError:
-        print("Erreur lors du lancement de horloge")    
-        horloge()
-
-
-
-
-elif answer0 == "4" : 
-    heure1 = "%H:%M:%S"    
-    try:
-        print("Modification...")
-        horloge()
-    except ValueError:
-        print("Erreur lors du lancement de horloge") 
-
 
 
 elif answer0 == "5":
