@@ -73,7 +73,7 @@ elif answer0 == "2" :
         print("Format d'heure invalide. Veuillez entrer l'heure au format HH:MM:SS.")
 
 
-elif answer0 == "5":
+elif answer0 == "3":
     try:
         print("Lancement de l'horloge ")
         horloge()
@@ -82,7 +82,7 @@ elif answer0 == "5":
 
 
 
-elif answer0 == "6":
+elif answer0 == "4":
     try:
         while True:
             horloge()
