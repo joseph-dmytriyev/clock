@@ -21,10 +21,10 @@ def regler_heure(heure_tuple):
     global temps_courant
     heures, minutes, secondes = heure_tuple
     temps_courant = temps_courant.replace(hour=heures, minute=minutes, second=secondes)
-
+#------------------haytham
 def afficher_heure():
     print(temps_courant.strftime(Heure1), end="\r")
-
+#-------------------Josph-----------------------------------------
 def regler_alarme(heure_tuple):
     global alarme
     heures, minutes, secondes = heure_tuple
@@ -59,7 +59,7 @@ if answer0 == "1":
     except KeyboardInterrupt:
         print("\nProgramme arrêté.")
 
-
+#-----------------------------Haytham--------------------------------------------------------------
 
 elif answer0 == "2" : 
    
