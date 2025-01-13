@@ -8,28 +8,6 @@ temps_courant = datetime.now()
 alarme = None
 
 
-def time_stop():
-
-    global pause
-    pause = not pause
-    if pause:
-        print("\nHorloge mise en pause.")
-    else:
-        print("\nHorloge reprise.")
-
-def regler_heure(heure_tuple):
-    global temps_courant
-    heures, minutes, secondes = heure_tuple
-    temps_courant = temps_courant.replace(hour=heures, minute=minutes, second=secondes)
-#------------------haytham
-def afficher_heure():
-    print(temps_courant.strftime(Heure1), end="\r")
-#-------------------Josph-----------------------------------------
-def regler_alarme(heure_tuple):
-    global alarme
-    heures, minutes, secondes = heure_tuple
-    alarme = datetime.now().replace(hour=heures, minute=minutes, second=secondes)
-
 def horloge():
     global temps_courant, alarme
     while True:
@@ -39,6 +17,31 @@ def horloge():
             alarme = None
         time.sleep(1)
         temps_courant += timedelta(seconds=1)
+
+def afficher_heure():
+    print(temps_courant.strftime(Heure1), end="\r")
+#------------------haytham-------------------------------
+
+def regler_heure(heure_tuple):
+    global temps_courant
+    heures, minutes, secondes = heure_tuple
+    temps_courant = temps_courant.replace(hour=heures, minute=minutes, second=secondes)
+
+
+#-------------------Josph-----------------------------------------
+def regler_alarme(heure_tuple):
+    global alarme
+    heures, minutes, secondes = heure_tuple
+    alarme = datetime.now().replace(hour=heures, minute=minutes, second=secondes)
+
+def time_stop():
+
+    global pause
+    pause = not pause
+    if pause:
+        print("\nHorloge mise en pause.")
+    else:
+        print("\nHorloge reprise.")
 
 # Programme principal
 print("     *** Menu ***     ")
