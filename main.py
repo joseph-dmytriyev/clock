@@ -13,7 +13,7 @@ def horloge():
     while True:
         display_hour()
         if alarm and current_time.strftime(Heure1) == alarm.strftime(Heure1):
-            print("\n*** Alarme ! Il est", alarme.strftime(Heure1), "***")
+            print("\n*** Alarme ! Il est", alarm.strftime(Heure1), "***")
             alarm = None
         time.sleep(1)
         current_time += timedelta(seconds=1)
