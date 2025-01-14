@@ -22,14 +22,14 @@ def display_hour():
     print(current_time.strftime(Heure1), end="\r")
 #------------------haytham-------------------------------
 
-def set_time(heure_tuple):
+def set_time(hour_tuple):
     global current_time
     heures, minutes, secondes = hour_tuple
     current_time = current_time.replace(hour=heures, minute=minutes, second=secondes)
 
 
 #-------------------Josph-----------------------------------------
-def set_alarm(heure_tuple):
+def set_alarm(hour_tuple):
     global alarm
     heures, minutes, secondes = hour_tuple
     alarm = datetime.now().replace(hour=heures, minute=minutes, second=secondes)
