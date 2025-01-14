@@ -6,7 +6,7 @@ Heure1 = " %H:%M:%S "
 
 current_time = datetime.now()
 alarm = None
-pause= None
+pause = None
 
 def horloge():
     global current_time, alarm
