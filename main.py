@@ -4,35 +4,35 @@ from datetime import datetime, timedelta
 Heure1 = " %H:%M:%S "
 
 
-temps_courant = datetime.now()
-alarme = None
+current_time = datetime.now()
+alarm = None
 
 
 def horloge():
-    global temps_courant, alarme
+    global current_time, alarm
     while True:
-        afficher_heure()
-        if alarme and temps_courant.strftime(Heure1) == alarme.strftime(Heure1):
+        display_hour()
+        if alarm and current_time.strftime(Heure1) == alarm.strftime(Heure1):
             print("\n*** Alarme ! Il est", alarme.strftime(Heure1), "***")
-            alarme = None
+            alarm = None
         time.sleep(1)
-        temps_courant += timedelta(seconds=1)
+        current_time += timedelta(seconds=1)
 
-def afficher_heure():
-    print(temps_courant.strftime(Heure1), end="\r")
+def display_hour():
+    print(current_time.strftime(Heure1), end="\r")
 #------------------haytham-------------------------------
 
 def regler_heure(heure_tuple):
-    global temps_courant
-    heures, minutes, secondes = heure_tuple
-    temps_courant = temps_courant.replace(hour=heures, minute=minutes, second=secondes)
+    global current_time
+    heures, minutes, secondes = hour_tuple
+    current_time = current_time.replace(hour=heures, minute=minutes, second=secondes)
 
 
 #-------------------Josph-----------------------------------------
-def regler_alarme(heure_tuple):
-    global alarme
+def set_alarm(heure_tuple):
+    global alarm
     heures, minutes, secondes = heure_tuple
-    alarme = datetime.now().replace(hour=heures, minute=minutes, second=secondes)
+    alarm = datetime.now().replace(hour=heures, minute=minutes, second=secondes)
 
 def time_stop():
 
@@ -55,7 +55,7 @@ if answer0 == "1":
     try:
         alarm_time = input("Entrez l'heure de l'alarme au format HH:MM:SS : ").strip()
         heures, minutes, secondes = map(int, alarm_time.split(":"))
-        regler_alarme((heures, minutes, secondes))
+        set_alarm((heures, minutes, secondes))
         horloge()
     except ValueError:
         print("Format d'heure invalide. Veuillez entrer l'heure au format HH:MM:SS.")
@@ -69,7 +69,7 @@ elif answer0 == "2" :
     try:
         new_time = input("Entrez la nouvelle heure au format HH:MM:SS : ").strip()
         heures, minutes, secondes = map(int, new_time.split(":"))
-        regler_heure((heures, minutes, secondes))
+        display_hour((heures, minutes, secondes))
         print(f"Heure réglée à {heures:02}:{minutes:02}:{secondes:02}.")
         horloge()
     except ValueError:
