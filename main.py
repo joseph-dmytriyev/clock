@@ -31,7 +31,7 @@ def set_time(heure_tuple):
 #-------------------Josph-----------------------------------------
 def set_alarm(heure_tuple):
     global alarm
-    heures, minutes, secondes = heure_tuple
+    heures, minutes, secondes = hour_tuple
     alarm = datetime.now().replace(hour=heures, minute=minutes, second=secondes)
 
 def time_stop():
