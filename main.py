@@ -22,7 +22,7 @@ def display_hour():
     print(current_time.strftime(Heure1), end="\r")
 #------------------haytham-------------------------------
 
-def regler_heure(heure_tuple):
+def set_time(heure_tuple):
     global current_time
     heures, minutes, secondes = hour_tuple
     current_time = current_time.replace(hour=heures, minute=minutes, second=secondes)
@@ -69,7 +69,7 @@ elif answer0 == "2" :
     try:
         new_time = input("Entrez la nouvelle heure au format HH:MM:SS : ").strip()
         heures, minutes, secondes = map(int, new_time.split(":"))
-        display_hour((heures, minutes, secondes))
+        set_time((heures, minutes, secondes))
         print(f"Heure réglée à {heures:02}:{minutes:02}:{secondes:02}.")
         horloge()
     except ValueError:
